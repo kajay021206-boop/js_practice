@@ -56,6 +56,7 @@
 </head>
 <body>
    <div class="start">
+    <h1 id="clock">00:00:00</h1>
     <h1 class="name">Counting Numbers</h1>
     <h1 id="num">00</h1>
     <div class="but">
@@ -79,9 +80,22 @@
          num.textContent=count;
     });
      res.addEventListener("click",function(){
-         count=0;
+         count="00";
          num.textContent=count;
     });
+
+    let clock=document.getElementById("clock");
+      
+    function start(){
+         let sh=new Date;
+        let hou=sh.getHours();
+        let min=sh.getMinutes();
+        let sec=sh.getSeconds();
+        let ampm=hou % 12 ? " AM ":" PM " ;
+        clock.textContent=hou+":"+min+":"+sec+ampm; 
+    }
+      start();
+      setInterval(start,1000);
    </script>
 </body>
 </html>

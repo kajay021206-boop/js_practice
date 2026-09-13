@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }  
+      body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background:black;
+      }
+      .todo{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 380px;
+        height: 410px;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+      }
+      .todo::before{
+        content: '';
+        position: absolute;
+        top: -50%;
+        left:-50px;
+        width: 260px;
+        height: 260px;
+        background: linear-gradient(0deg,transparent,transparent,transparent,rgb(1, 255, 1),rgb(1, 255, 1),rgb(1, 255, 1));
+        animation: spin 6s linear infinite;
+        transform-origin: bottom right;
+        z-index: 1;
+      }
+      .todo::after{
+        content: '';
+        position: absolute;
+        top: -50%;
+        left:-50px;
+        width: 260px;
+        height: 260px;
+        background: linear-gradient(0deg,transparent,transparent,transparent,rgb(1, 255, 1),rgb(1, 255, 1),rgb(1, 255, 1));
+        animation: spin 6s linear infinite;
+          transform-origin: bottom right;
+          animation-delay: -1.5s;
+          z-index: 1;
+      }
+      .border{
+        position: relative;
+        z-index: 1;
+        inset: 0;
+      }
+      .border::before{
+        content: '';
+        position: absolute;
+        top: -50%;
+        left:-50px;
+        width: 260px;
+        height: 260px;
+        background: linear-gradient(0deg,transparent,transparent,transparent,rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255));
+        animation: spin 6s linear infinite;
+        transform-origin: bottom right;
+        animation-delay: -2.5s;
+        z-index: 1;
+      }
+      .border::after{
+        content: '';
+        position: absolute;
+        top: -50%;
+        left:-50px;
+        width: 260px;
+        height: 260px;
+        background: linear-gradient(0deg,transparent,transparent,transparent,rgb(237, 238, 237),rgb(253, 255, 253),rgb(249, 252, 249));
+        animation: spin 6s linear infinite;
+          transform-origin: bottom right;
+          animation-delay: -5.5s;
+          z-index: 1;
+      }
+      @keyframes spin {
+        0%{
+          transform: rotate(0deg);
+        }
+        100%{
+          transform: rotate(360deg);
+        }
+      }
+      .to{
+        inset: 3px;
+        border-radius: 5px;
+        background:black;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        z-index: 5;
+      }
+      h1{
+        font-size: 50px;
+        color: rgb(64, 255, 47);
+        filter: drop-shadow(0 0 12px rgb(1, 255, 1));
+      }
+      .text{
+       display: flex;
+       position: relative;
+       width: 90%;
+      }
+      .text input{
+        padding: 10px;
+        width: 80%;
+        border-radius: 5px 0 0 5px;
+        border: 2px solid rgb(1, 240, 1);
+        background: transparent;
+        color: rgb(1, 240, 1);
+        letter-spacing: 3px;
+       outline: none;
+      }
+      .text button{
+        border: 2px solid rgb(1, 240, 1);
+        padding: 10px 30px;
+        border-radius: 0 5px 5px 0;
+        font-size: 16px;
+        font-size: bold;
+        background: rgb(1, 240, 1);
+      }
+      .list{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        background: #1b281c;
+        width: 95%;
+        height: 68%;
+        border-radius: 5px;
+        overflow-y: auto;
+      }
+      .task{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-radius: 5px;
+        color: rgb(1, 240, 1);
+        background: rgb(40, 75, 40);
+      }
+      .task input{
+            accent-color:rgb(1, 240, 1);
+             width: 15px;
+      }
+      .task button{
+        font-size: 19px;
+        width: 20px;
+        border-radius: 5px;
+        background: red;
+        border: 1px solid #fff;
+
+      }
+      #all{
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+      }
+    </style>
+</head>
+<body>
+    <div class="todo">
+      <div class="border"></div>
+        <div class="to">
+        <h1>Task Lists</h1>
+        <div class="text">
+            <input type="text" id="write" placeholder="Enter your tasks.....">
+            <button id="add">Go</button>
+        </div>
+        <div class="list">
+           
+        </div>
+        </div>
+    </div>
+    <button id="all">ALL</button>
+    <script>
+        let write=document.getElementById("write");
+        let add=document.getElementById("add");
+        let list=document.querySelector(".list");
+        add.addEventListener("click", function(){
+          let show=write.value.trim();
+           if(show===""){
+            alert("Please enter your today tasks.....");
+            return;
+           }
+           let div=document.createElement("div");
+           div.className="task";
+           let checkbox=document.createElement("input");
+           checkbox.type="checkbox";
+           let p=document.createElement("p");
+           p.textContent=show;
+           let del=document.createElement("button");
+           del.textContent="×";
+           checkbox.addEventListener("click",function(){
+           if(checkbox.checked){
+            p.style.textDecoration="line-through";
+           }
+           else{
+            p.style.textDecoration=none;
+           }
+           });
+           del.addEventListener("click",function(){
+            div.remove();
+           })
+    
+           div.appendChild(checkbox);
+           div.appendChild(p);
+           div.appendChild(del);
+           list.appendChild(div);
+
+           write.value="";
+        });
+        let all=document.getElementById("all");
+        all.addEventListener("click", function(){
+          let box=document.querySelectorAll('.list input[type="checkbox"]');
+              box.forEach(function(checkbox){
+                checkbox.checked=true;
+                let sat=checkbox.parentElement;
+                let p=sat.querySelector("p");
+                p.style.textDecoration="line-through";
+              });
+        });
+    </script>
+</body>
+</html>
