@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #0c1022;
+        }
+        .start{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            background: #111527;
+            width: 350px;
+            height: 380px;
+            border: 1px solid cyan;
+            border-radius: 5px;
+            box-shadow: 0 0 12px cyan;
+        }
+        .name{
+            font-size: 38px;
+            color: aqua;
+        }
+        h1{
+            font-size: 50px;
+            color: aliceblue;
+            filter: drop-shadow(0 0 22px cyan);
+        }
+        button{
+            padding: 10px 30px;
+            border-radius: 5px;
+           font-size: 30px;
+           border: 2px solid rgb(227, 227, 232);
+           background: cyan;
+        }
+        #add{
+          background: rgb(50, 255, 47);  
+        }
+        #rem{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+   <div class="start">
+    <h1 class="name">Counting Numbers</h1>
+    <h1 id="num">00</h1>
+    <div class="but">
+        <button id="add">+</button>
+        <button id="rem">-</button>
+        <button id="res">Restart</button>
+    </div>
+   </div> 
+   <script>
+    let num=document.getElementById("num");
+    let add=document.getElementById("add");
+    let rem=document.getElementById("rem");
+    let res=document.getElementById("res");
+    let count=0;
+    add.addEventListener("click",function(){
+         count++;
+         num.textContent=count;
+    });
+    rem.addEventListener("click",function(){
+         count--;
+         num.textContent=count;
+    });
+     res.addEventListener("click",function(){
+         count=0;
+         num.textContent=count;
+    });
+   </script>
+</body>
+</html>
