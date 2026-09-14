@@ -92,6 +92,7 @@
         let min=sh.getMinutes();
         let sec=sh.getSeconds();
         let ampm=hou % 12 ? " AM ":" PM " ;
+        hou=hou%12||12;
         clock.textContent=hou+":"+min+":"+sec+ampm; 
     }
       start();
