@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(86deg,black,#2c2c2c);
+        }
+        .cal{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 420px;
+            height: 470px;
+            padding: 10px;
+            background: #212221b6;
+            border-radius: 8px;
+            box-shadow: 0 0 8px #ffffffa4;
+            position: relative;
+        }
+        .display{
+            width: 100%;
+        }
+        .display input{
+            width: 100%;
+            height: 100%;
+            padding: 35px;
+            border-radius: 5px;
+            text-align: right;
+            background: linear-gradient(65deg,rgba(0, 0, 0, 0.596),rgb(50, 47, 47));
+            border: none;
+            font-size: 30px;
+            color: aliceblue;
+            overflow-y: auto;
+        }
+        .but{
+            position: relative;
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr 2fr;
+            height: 100%;
+            gap: 10px;
+        }
+        .but button{
+            border-radius: 50%;
+            border: none;
+            background: transparent;
+            font-size: 25px;
+            box-shadow: -5px 0px 5px #ffffff81;
+            color: aliceblue;
+        }
+         .but .color{
+            color: rgb(6, 250, 6);
+            
+         }
+         .but .colors{
+            background: orangered;
+         }
+         button:hover{
+            background: #01010198;
+         }
+    </style>
+</head>
+<body>
+    <div class="cal">
+        <div class="display" >
+            <input type="text" id="display" placeholder="Calculate Here....." readonly>
+        </div>
+        <div class="but">
+           
+                <button class="color" onclick="cl()">AC</button>
+                 <button class="color" onclick="del()">DEL</button>
+                  <button class="color" onclick="add('%')">%</button>
+                   <button class="color" onclick="add('/')">/</button>
+                    <button onclick="add('7')">7</button>
+                     <button onclick="add('8')">8</button>
+                      <button onclick="add('9')">9</button>
+                       <button class="color" onclick="add('*')">*</button>
+                        <button onclick="add('4')">4</button>
+                         <button onclick="add('5')">5</button>
+                          <button onclick="add('6')">6</button>
+                           <button class="color" onclick="add('-')">-</button>
+                            <button onclick="add('1')">1</button>
+                             <button onclick="add('2')">2</button>
+                              <button onclick="add('3')">3</button>
+                               <button class="color" onclick="add('+')">+</button>
+                                <button onclick="add('00')">00</button>
+                                 <button onclick="add('0')">0</button>
+                                  <button onclick="add('.')">.</button>
+                                   <button class="colors" onclick="cal()">=</button>
+
+            
+        </div>
+    </div>
+    <script>
+        let display=document.getElementById("display");
+        function add(value){
+            display.value+=value;
+        }
+         function cl(){
+         display.value="";
+        }
+        function cal(){
+            display.value=eval(display.value);
+        }
+        function del(){
+            display.value=display.value.slice(0,-1);
+        }
+    </script>
+</body>
+</html>
