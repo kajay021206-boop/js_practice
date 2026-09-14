@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #8b5cf6;
+      }
+      .color{
+       display: flex;
+       flex-direction: column;
+       gap: 20px;
+       width: 550px;
+       height: 380px;
+       padding: 10px;
+       position: relative;
+       color: #fff;
+      }
+      .name{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      .name span{
+        font-size: 45px;
+      }
+      .name h1{
+        font-size: 45px;
+      }
+      .pa {
+       display: flex;
+       justify-content: center;
+      }
+      .pa p{
+        font-size: 20px;
+        font-weight: 100;
+      }
+      .box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #210e4e;
+        padding: 20px;
+        height: 350px;
+        border-radius: 7px;
+      }
+      .boxes{
+        display: grid;
+        grid-template-columns:1fr 2fr;
+        gap: 20px;
+      }
+      .num{
+        grid-column-start:1;
+        grid-column-end:4;
+        background: #8b5cf6;
+        padding: 20px;
+        height: 120px;
+        border-radius: 10px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+      }
+      .but{
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        background-color: #8b5cf6;
+        padding: 10px;
+        width: 220px;
+        height: 60px;
+        border-radius: 5px;
+      }
+      .s{
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        background-color: #8a5cf64a;
+        border: 1px solid ;
+        padding: 10px;
+        width: 220px;
+        height: 60px;
+        border-radius: 5px; 
+      }
+      .star{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        font-size: 17px;
+      }
+    </style>
+</head>
+<body>
+    <div class="color">
+        <div class="name">
+            <span><i class='bx bxs-palette'></i></span>
+            <h1>Color Changer</h1>
+        </div>
+        <div class="pa">
+            <p>Click the button to get a random background color</p>
+        </div>
+        <div class="box">
+            <div class="boxes">
+                <div class="num">
+                    <h1>#8B5CF6</h1>
+                </div>
+                <div class="but">
+                    <span><i class='bx bx-shuffle'></i></span>
+                    <h3>Change Color</h3>
+                </div>
+                 <div class="s">
+                    <span><i class='bx bx-merge'></i></span>
+                    <h3>Copy Color</h3>
+                </div>
+            </div>
+            <div class="star">
+                <span><i class='bx bxs-star'></i></span>
+                <p>Click "Change Color" to get a new color</p>
+            </div>
+        </div>
+    </div>
+    <script>
+      let changebut=document.querySelector(".but");
+      let copy=document.querySelector(".s");
+      let colort=document.querySelector(".num h1");
+      let body=document.body;
+      let letter="0123456789ABCDEF";
+        function randomColor(){
+          let color="#";
+          for(let i=0;i<6;i++){
+            let random=Math.floor(Math.random()*16);
+            color +=letter[random];
+          }
+          return color;
+        }
+        changebut.addEventListener("click", function(){
+          let ne=randomColor();
+          body.style.backgroundColor=ne;
+          colort.textContent=ne;
+        });
+        copy.addEventListener("click",function(){
+          let current=colort.textContent;
+          navigator.clipboard.writeText(current);
+          alert("color code copied!");
+        })
+        
+    </script>
+</body>
+</html>
