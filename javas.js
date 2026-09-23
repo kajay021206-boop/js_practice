@@ -6,6 +6,7 @@ let repeatcount=document.getElementById("restartcount");
 let countingstart=document.getElementById("countingstart");
 let countbuttons=document.querySelector(".count-buttons");
 let counting=0;
+let countclock=document.getElementById("countclock");
 
 //counting working process
 function showcount(){
@@ -32,8 +33,9 @@ countingstart.addEventListener("click",function(){
    countbuttons.style.opacity="1";
    showcount();
    keycount();
-   
-})
+   countingstart.style.display="none";
+   countclock.style.display="flex";
+});
 
 //by using keydown
 function keycount(){
@@ -66,5 +68,20 @@ function colorcount(){
     }
 }
  
+//clock in count page
+function countclocksshow(){
+    let newclockcount=new Date;
+    let hours=newclockcount.getHours();
+    let minutes=newclockcount.getMinutes();
+    let secconds=newclockcount.getSeconds();
+    let ampm= hours % 12 ? " PM ":" AM "; 
+    let years=newclockcount.getUTCFullYear();
+    let dates=newclockcount.getDate();
+    let months=newclockcount.getUTCMonth();
+      hours=hours % 12 || 12;
+    countclock.textContent=hours+":"+minutes+":"+secconds+ampm+"  "+ dates+"," + months+","+ years;
+}
+countclocksshow();
+setInterval(countclocksshow,1000);
 
 
