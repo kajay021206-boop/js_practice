@@ -77,6 +77,8 @@
        align-items: center;
       }
       .but{
+        grid-column-start: 1;
+        grid-column-end: 3;
         display: flex;
         gap: 10px;
         justify-content: center;
@@ -142,6 +144,7 @@
       let copy=document.querySelector(".s");
       let colort=document.querySelector(".num h1");
       let body=document.body;
+      let num=document.querySelector(".num")
       let letter="0123456789ABCDEF";
         function randomColor(){
           let color="#";
@@ -154,6 +157,8 @@
         changebut.addEventListener("click", function(){
           let ne=randomColor();
           body.style.backgroundColor=ne;
+          changebut.style.backgroundColor=ne;
+           num.style.backgroundColor=ne;
           colort.textContent=ne;
         });
         copy.addEventListener("click",function(){

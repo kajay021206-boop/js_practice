@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(35deg,rgb(132, 81, 193),rgb(119, 93, 175),rgb(229, 227, 231) 60%);
+}
+.counting{   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 430px;
+    height: 430px;
+    background: linear-gradient(65deg,rgb(234, 187, 234),rgb(70, 53, 185));
+    border-radius: 10px;
+    box-shadow: 0 0 12px black;
+}
+.counting h1{
+    font-size: 45px;
+    background: linear-gradient(25deg,rgb(30, 0, 128),rgb(0, 70, 128),rgb(52, 4, 147));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.counting h2{
+    font-size: 50px;
+    color:rgb(15, 4, 91);
+    filter: drop-shadow(0 0 2px black);
+}
+.count-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 10px;
+    transition: 0.5s;
+    transform: translateY(-15px);
+    opacity: 0;
+}
+.count-buttons button{
+    padding: 20px 30px;
+    border-radius: 10px;
+    font-size: 30px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 12px black;
+    color: #fff;
+}
+.countone{background: rgb(0, 74, 194);}
+.counttwo{background: rgb(20, 0, 62);}
+.countthree{background: rgb(0, 110, 255);}
+.count-buttons button:hover{
+    background: rgb(41, 41, 93);
+}
+#countingstart{
+    padding: 20px 30px;
+    margin-top: 30px;
+      border-radius: 10px;
+    font-size: 30px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 12px black;
+    color: #fff;
+    background:rgb(128, 50, 205);
+}
+#countingstart:hover{
+    background: rgb(18, 18, 75);
+}
