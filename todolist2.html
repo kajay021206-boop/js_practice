@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+         font-family: Arial, Helvetica, sans-serif;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .todolist{
+        display: flex;
+        flex-direction: column;
+        width: 750px;
+        height: 480px;
+        padding: 20px;
+        border-radius: 10px;
+        background: #ccd2e586;
+        box-shadow: 0 0 12px;
+    }
+    .todohead{
+        display: flex;
+        flex-direction: column;
+    }
+    .todohead h1{
+        font-size: 32px;
+        font-weight: bold;
+    }
+    .todohead h2{
+        font-size: 15px;
+        color: #403e3e;
+    }
+    .todotext{
+        display: flex;
+        gap: 7px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .todotext input{
+        padding: 10px;
+        width: 75%;
+        border: 2px solid rgba(0, 0, 0, 0.485);
+        border-radius: 6px;
+        font-size: 17px;
+    }
+    .todotext input:hover{
+        border-color: blue;
+    }
+    .todotext button{
+        padding: 10px 30px;
+        border-radius: 7px;
+        border: none;
+        background: rgb(42, 74, 255);
+        font-size: 18px;
+        color: #fff;
+    }
+     .todotext button:hover{
+        background: rgb(4, 51, 112);
+    }
+    .todo{
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        background: #fff;
+        height: 320px;
+        border-radius: 10px;
+        padding: 12px;
+    overflow-y:auto;
+    }
+    .todotask{
+       display: flex;
+       justify-content: space-between;
+       padding: 10px;
+       border-radius: 7px;
+       background: rgba(164, 164, 240, 0.33);
+       box-shadow: 0 0 4px black; 
+    }
+    .todotask input{
+        width: 35px;
+        accent-color: green;
+    }
+    .todotask button{
+        background: red;
+        width: 30px;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+    </style>
+</head>
+<body>
+    
+  <div class="todolist">
+     <div class="todohead">
+       <h1>To-Do-List</h1>
+       <h2 id="tododate">00</h2>
+       <div class="todotext">
+         <input id="todotext" type="text" placeholder="Add to new task.....">
+         <button id="add">+ Add task</button>
+       </div>
+       
+       <div class="todo">
+        
+        
+       </div>
+     </div>
+   </div>
+
+    
+    <script>
+        const tododate=document.getElementById("tododate");
+        
+        function show(){
+            let newtodo=new Date;
+            tododate.textContent=newtodo;
+        }
+         show();
+
+
+         let todotext=document.getElementById("todotext");
+         let add=document.getElementById("add");
+         let toob=document.querySelector(".todo");
+
+         add.addEventListener("click", function(){
+            let todoinfo=todotext.value.trim();
+
+            if(todoinfo===""){
+                alert("Please enter your task");
+                return;
+            }
+
+            let div=document.createElement("div");
+            div.className="todotask";
+            let check=document.createElement("input");
+            check.type="checkbox";
+            let p=document.createElement("p");
+            p.textContent=todoinfo;
+            let rem=document.createElement("button");
+            rem.textContent="⨉";
+
+            check.addEventListener("click", function(){
+              p.style.textDecoration="line-through";
+              rem.style.background="green";
+              p.style.color="rgb(71, 66, 66)";
+              rem.textContent="✓";  
+              check.style.filter="drop-shadow(0 0 72px green)"
+              setInterval(function(){
+                 div.remove();
+              },3000);
+            })
+            
+            rem.addEventListener("click",function(){
+              div.remove();
+            });
+
+            div.appendChild(check);
+            div.appendChild(p);
+            div.appendChild(rem);
+            toob.appendChild(div);
+
+            todotext.value="";
+
+         });
+    </script>
+</body>
+</html>
