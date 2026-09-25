@@ -17,6 +17,7 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
+        background: linear-gradient(0deg,#e8e9edf5,#3c62e086);
     }
     .todolist{
         display: flex;
@@ -135,6 +136,8 @@
          let add=document.getElementById("add");
          let toob=document.querySelector(".todo");
 
+    
+
          add.addEventListener("click", function(){
             let todoinfo=todotext.value.trim();
 
@@ -157,7 +160,7 @@
               rem.style.background="green";
               p.style.color="rgb(71, 66, 66)";
               rem.textContent="✓";  
-              check.style.filter="drop-shadow(0 0 72px green)"
+              rem.style.boxShadow="0 0 12px green"
               setInterval(function(){
                  div.remove();
               },3000);
@@ -174,6 +177,13 @@
 
             todotext.value="";
 
+         });
+        
+
+         todotext.addEventListener("keydown",function(event){
+             if(event.key==="Enter"){
+                add.click();
+             }
          });
     </script>
 </body>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colorchange</title>
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background:#5cc3f6;
+        }
+        .colorcha{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #296e91;
+            padding: 15px;
+            width: 630px;
+            height: 480px;
+            border-radius: 10px;
+            box-shadow: 0 0 22px black;
+            gap: 20px;
+        }
+        .colorname{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .colorname span{
+            font-size: 50px;
+        }
+        .para p{
+            font-size: 20px;
+            margin-top: -20px;
+        }
+        .colorboxes{
+            display:none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+           
+        }
+        .colornum{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            background: #5cc3f6;
+            width: 500px;
+            height: 200px;
+            border-radius: 12px;
+            box-shadow: 0 0 22px black;
+        }
+        .colornum h1{
+           font-size: 50px;
+        }
+        .colorbuttons{
+            display: flex;
+            gap: 30px;
+        }
+        .colorbuttons button{
+            padding: 20px;
+            width: 200px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        .colorchange{
+             background: #5cc3f6;
+            border: 2px solid #07344ac1;
+        }
+        .copycolor{
+             background: #032a3d;
+            border: 2px solid #0fa9f6c1;
+            color: #5cc3f6;
+        }
+        .star{
+            display: flex;
+            font-size: 20px;
+            gap: 10px;
+        }
+        .clickhere{
+            padding: 20px 120px;
+            margin-top: 30px;
+            border-radius: 5px;
+            font-size: 20px;
+            border: 2px solid #032a3d;
+            background: #296e91;
+            color:black;
+            transition: 0.5s;
+        }
+        .clickhere:hover{
+            background: rgb(79, 195, 195);
+            box-shadow: 0 0 12px black;
+        }
+      </style>
+</head>
+<body>
+    <div class="colorcha">
+        <div class="colorname">
+            <span><i class='bx bxs-palette'></i></span>
+            <h1>Color change</h1>
+        </div>
+        <div class="para">
+            <p>Click the button to get a random background colour</p>
+        </div>
+        <div class="colorboxes">
+            <div class="colornum">
+                <h1>#5cc3f6</h1>
+            </div>
+            <div class="colorbuttons">
+                <button class="colorchange"><i class='bx bx-shuffle'></i>  Change color</button>
+                <button class="copycolor"><i class='bx bx-merge'></i>  Copy color</button>
+            </div>
+            <div class="star">
+                <span><i class='bx bxs-star'></i></span>
+                <p>Click "Change Color" to get a new color.</p>
+            </div>
+        </div>
+    </div>
+    <button class="clickhere">
+        click here to change color 👋
+    </button>
+    <script>
+        let colornum=document.querySelector(".colornum h1");
+        let colorchange=document.querySelector(".colorchange");
+        let copycolor=document.querySelector(".copycolor");
+        let body=document.body;
+        let colornums=document.querySelector(".colornum");
+        let letters="0123456789ABCDEF";
+        let clickhere=document.querySelector(".clickhere");
+        let colorboxes=document.querySelector(".colorboxes")
+        
+        function change(){
+            let color="#";
+            for(let i=0;i<6;i++){
+                let random=Math.floor(Math.random()*16);
+                color +=letters[random];  
+            }
+            return color;
+        }
+
+        colorchange.addEventListener("click", function(){
+              
+            let nowchange=change();
+            
+           body.style.background=nowchange;
+           colornum.textContent=nowchange;
+           colornums.style.background=nowchange;
+           colorchange.style.background=nowchange;
+
+        });
+
+        copycolor.addEventListener("click",function(){
+            let current=colornum.textContent;
+                navigator.clipboard.writeText(current);
+            alert("color code is copied");
+        });
+
+        clickhere.addEventListener("click",function(){
+          clickhere.style.display="none";
+         colorboxes.style.display="flex"; 
+        });
+    </script>
+</body>
+</html>
