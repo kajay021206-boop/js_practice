@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background:linear-gradient(0deg,rgb(89, 89, 200),rgb(240, 212, 240)) ;
+        }
+        .password{
+            background: #fff;
+            padding: 15px;
+            width: 620px;
+            height: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 0 12px black;
+            gap: 10px;
+        }
+        .password span{
+            font-size: 60px;
+            background: linear-gradient(55deg,rgb(95, 7, 196) 50%,#fff 20%,black 10%,rgb(95, 7, 196));
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius:0 50%;
+            color: #fff;
+        }
+        .password h1{
+            font-size: 45px;
+        }
+        .password p{
+            font-size: 15px;
+        }
+        .passinput{
+            display: flex;
+            width: 100%;
+        }
+        .passinput input{
+            padding: 15px;
+            width: 100%;
+            outline: none;
+            border: 2px solid #3c3c3c56;
+            border-radius: 5px 0 0 5px;
+            border-right:none;
+            font-size: 30px;
+            background: rgba(174, 174, 196, 0.433);
+        }
+        .password button{
+            padding: 10px 30px;
+            font-size: 30px;
+            border-radius: 0 5px 5px 0;  
+            border: none;
+            border: 2px solid #3c3c3c56;
+            border-left: none;
+            background:  rgba(174, 174, 196, 0.433);
+        }
+        .passlengt{
+            display: flex;
+            gap: 10px;
+            left: -190px;
+            position: relative;
+            align-items: center;
+        }
+        .passlengt h3{
+            font-size: 16px;
+        }
+        select{
+            padding: 5px;
+            background: #7c7c7c56;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .passbox{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .pabox{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .pain{
+            display: flex;
+            gap: 5px;
+        }
+        .pain p{
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .pain input{
+            width: 20px;
+        }
+        .pashow{
+            font-size: 12px;
+            color: #3d3939d8;
+        }
+        .gen button{
+            padding: 6px;
+             background: rgb(118, 35, 252);
+            border-radius: 5px;
+            width: 500px;
+            font-size: 25px;
+            color: #fff;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="password">
+        <span><i class='bx bxs-lock'></i></span>
+        <h1 >Password Generator</h1>
+        <p>Create strong and passwords with just one click!</p>
+        <div class="passinput">
+            <input id="passtext" type="text" placeholder="Password">
+            <button id="tocopy"><i class='bx bx-merge'></i></button>
+        </div>
+        <div class="passlengt">
+            <h3>Password Length:</h3>
+            <select id="select">
+                <option>6</option>
+                 <option>7</option>
+                  <option>8</option>
+                   <option>9</option>
+                    <option>10</option>
+                     <option>12</option>
+            </select>
+        </div>
+        <div class="passbox">
+            <div class="pabox">
+                <div class="pain">
+                    <input id="upper" type="checkbox">
+                    <p>Upper Letters</p>
+                </div>
+                <div class="pashow">
+                    <h3>(A-Z)</h3>
+                </div>
+            </div>
+             <div class="pabox">
+                <div class="pain">
+                    <input id="lower" type="checkbox">
+                    <p>Lower Letters</p>
+                </div>
+                <div class="pashow">
+                    <h3>(a-z)</h3>
+                </div>
+            </div>
+             <div class="pabox">
+                <div class="pain">
+                    <input id="num" type="checkbox">
+                    <p>Numbers</p>
+                </div>
+                <div class="pashow">
+                    <h3>(0-9)</h3>
+                </div>
+            </div>
+             <div class="pabox">
+                <div class="pain">
+                    <input id="spe" type="checkbox">
+                    <p>Special Characters</p>
+                </div>
+                <div class="pashow">
+                    <h3>(!@#$%.....)</h3>
+                </div>
+            </div>
+        </div>
+        <div class="gen">
+        <button id="genarate">Generate Password</button>
+        </div>
+    </div>
+    <script>
+      let passtext=document.getElementById("passtext");
+      let tocopy=document.getElementById("tocopy");
+      let select=document.getElementById("select");
+      let upper=document.getElementById("upper");
+      let lower=document.getElementById("lower");
+      let num=document.getElementById("num");
+      let spe=document.getElementById("spe");
+      let genarate=document.getElementById("genarate");
+
+      let alpha="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      let  beta="abcdefghijklmnopqrstuvwxyz";
+      let number="0123456789";
+      let special="!@#$%^&*()";
+
+      genarate.addEventListener("click", function(){
+         let password="";
+         let Characters="";
+         if(upper.checked){
+            Characters+=alpha;
+         }
+         if(lower.checked){
+            Characters+=beta;
+         }
+         if(num.checked){
+            Characters+=number;
+         }
+         if(spe.checked){
+            Characters+=special;
+         }
+         if(Characters===""){
+            alert("Please select at least one option");
+            return;
+         }
+
+         let length=Number(select.value);
+
+         for(let i=0;i<length;i++){
+            let random=Math.floor(Math.random()*Characters.length);
+            password+=Characters[random];
+         }
+
+         passtext.value=password;
+
+      });
+
+      tocopy.addEventListener("click",function(){
+         if(passtext.value===""){
+            alert("please generate password");
+            return;
+         }
+         navigator.clipboard.writeText(passtext.value);
+         tocopy.innerHTML="✓";
+         tocopy.style.color="green";
+         
+         setInterval(function(){
+            tocopy.style.color="black";
+             tocopy.innerHTML="<i class='bx bx-merge'></i>";
+             passtext.value="";
+         },3000);
+      });
+
+
+
+
+    
+
+    </script>
+</body>
+</html>
