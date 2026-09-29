@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <style>
+   *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+   }
+   body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(65deg,rgb(163, 161, 167) 50%,rgba(154, 185, 183, 0.623) 50%);
+   }
+   .shopping{
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     padding: 16px 50px;
+     border-radius: 7px;
+     box-shadow: 0 0 12px black;
+     background: #fff;
+     width: 480px;
+     height: auto;
+   }
+   .shopping h1{
+    font-size: 27px;
+    text-align: center;
+    color: black;
+   }
+   .shopping p{
+    font-weight: bold;
+    color: #908b8b;
+   }
+   .card{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+   }
+   .card h2{
+    font-size: 16px;
+    color: blue;
+   }
+   .card input{
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.496);
+    border-radius: 5px;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+   }
+   button{
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    font-size: 20px;
+    background: rgb(4, 4, 84);
+    color: #fff;
+   }
+   button:hover{
+    background: blue;
+   }
+   .showing{
+    padding: 12px;
+    background: rgba(172, 255, 47, 0.553);
+    border-radius: 8px;
+    display:none;
+    flex-direction: column;
+    gap: 10px;
+   }
+   .dis{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+   }
+   .sum{
+    text-decoration: line-through;
+   }
+   .dis.b{
+    color: green;
+   }
+   .dis.c{
+     font-size: 21px;
+   }
+    </style>
+</head>
+<body>
+<div class="shopping">
+    <h1>Shopping Bill</h1>
+    <p>Calculate the shopping bill here</p>
+    <div class="card">
+        <h2>Enter price here</h2>
+        <input id="price" type="number">
+    </div>
+     <div class="card">
+        <h2>Quantity</h2>
+        <input id="qua" type="number">
+    </div>
+     <div class="card">
+        <h2>Discount</h2>
+        <input id="dis" type="number">
+    </div>
+    <button class="submit">Calculate bill</button>
+    <div class="showing">
+        <div class="dis a">
+            <h3>Sum Total</h3>
+            <h3 class="sum">-----</h3>
+        </div>
+        <div class="dis b">
+            <h3>Discount</h3>
+            <h3 class="disc">-----</h3>
+        </div>
+        <div class="dis b">
+            <h3>Extra 5% if amount >2000</h3>
+            <h3 class="extra">-----</h3>
+        </div>
+        <div class="dis c">
+            <h3>Final Amount</h3>
+            <h3 class="total">-----</h3>
+        </div>
+    </div>
+</div>    
+<script>
+  
+  let price=document.getElementById("price");
+  let qua=document.getElementById("qua");
+  let dis=document.getElementById("dis");
+  let but=document.querySelector(".submit");
+  let sum=document.querySelector(".sum");
+  let disc=document.querySelector(".disc");
+  let total=document.querySelector(".total");
+   let showing=document.querySelector(".showing");
+   let extra=document.querySelector(".extra")
+  but.addEventListener("click", function(){
+
+  let p=Number(price.value);
+  let q=Number(qua.value);
+  let d=Number(dis.value);
+
+   if(price.value===""||qua.value===""||dis.value===""||d<0||d>100){
+     alert("Please enter valid values");
+     return;
+   }
+
+
+  let sumadd=p*q;
+  let discount=(sumadd*d)/100;
+  let final=sumadd-discount;
+ let extras=0;
+
+ if(final>2000){
+    extras=(final*5)/100;
+    final=final+extras;
+ }
+
+
+  sum.textContent=" ₹ "+sumadd.toFixed(2);
+  disc.textContent="- ₹ "+discount.toFixed(2);
+  extra.textContent="+ ₹  "+extras.toFixed(2);
+  total.textContent=" ₹ "+final.toFixed(2);
+  disc.style.color="red";
+  showing.style.display="flex";
+
+  
+
+  });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+    body{
+     display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; 
+    }
+    .ticket{
+     display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 480px;
+      height:auto;
+      border-radius: 6px;
+      padding: 10px;
+      gap: 10px;
+      background:hwb(200 47% 49% / 0.3176470588235294);
+      box-shadow: 0 0 12px black; 
+    }
+    .ticket h1{
+      font-size: 30px;
+    }
+    .ticket p{
+      font-size: 18px;
+      text-align: center;
+      font-weight: bold;
+      color:hwb(0 51% 49%);
+    } 
+    .card{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height:auto;
+      border-radius: 6px;
+      padding: 10px;
+      width: 100%;
+      gap: 10px;
+      background:white;
+    }
+    .cardn{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 100%;
+    }
+    .cardn h2{
+      font-size: 20px;
+      color:blue;
+    }
+    .cardn input{
+        padding: 10px;
+        border: 2px solid hwb(185 23% 72%);
+        border-radius:7px;
+        font-weight: bold;
+        font-size: 20px;
+         }
+    .cardin{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 100%;
+    }.cardin h2{
+      font-size: 20px;
+      color: blue;
+    }
+    .cardin select{
+      padding: 10px;
+        border: 2px solid hwb(185 23% 72%);
+        border-radius:7px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    button{
+      padding: 10px;
+      background: hwb(265 0% 50%);
+      color: white;
+      border:none;
+      border-radius:10px;
+      font-size: 20px;
+      width: 100%;
+    }
+    button:hover{
+      background-color: rgb(188, 0, 250);
+    }
+    .show{
+      display: none;
+      flex-direction: column;
+      gap:10px;
+      padding: 15px;
+      font-size: 17px;
+      border-radius:6px;
+      background: hwb(199 45% 34% / 0.6431372549019608);
+      color: white;
+      text-align: center;
+    }.show h4{
+    font-size: 17px;
+    padding: 7px;
+      border: none;
+      border-radius:20px;
+      background: hwb(350 34% 15% / 0.6823529411764706)
+    }
+  </style>
+</head>
+<body>
+  <div class="ticket">
+    <h1>Movie Ticket Checked</h1>
+    <p>Example UI mockup-build your own version</p>
+    <div class="card">
+      <div class="cardn">
+        <h2>Enter your age</h2>
+        <input class="inp" type="number">
+      </div>
+      <div class="cardin">
+        <h2>select movie rating</h2>
+        <select class="agenum">
+          <option>13+</option>
+          <option>16+</option>
+          <option>18+</option>
+        </select>
+      </div>
+      <div class="cardin">
+        <h2>Select Language</h2>
+         <select class="lan">
+          <option>Telugu</option>
+          <option>Hindi</option>
+          <option>English</option>
+         </select>
+      </div>
+      <button class="but">Check Eligibility</button>
+      <div class="show">
+        <h4 class="pshow"></h4>
+        <h3 class="hshow"></h3>
+      </div>
+    </div>
+  </div>
+  <script>
+ let inp=document.querySelector(".inp");
+ let agenum=document.querySelector(".agenum");
+ let lan=document.querySelector(".lan");
+  let but=document.querySelector(".but");
+  let pshow=document.querySelector(".pshow");
+  let hshow=document.querySelector(".hshow");
+  let show=document.querySelector(".show")
+    but.addEventListener("click",function(){
+
+if(inp.value===""){
+  alert("Please select your age!");
+  return;
+}
+      if(inp.value>=agenum.value){
+         show.style.display="flex";
+        pshow.textContent="Active";
+        hshow.textContent="You eligible to watch for this "+lan.value+" movie"
+        pshow.style.color="green";
+        pshow.style.background="hwb(120 50% 27% / 0.6823529411764706)";
+      }
+      else{
+        show.style.display="flex";
+        pshow.textContent="In active";
+        hshow.textContent="You not eligible to watch for this " + lan.value + " movie.";
+        pshow.style.color="red";
+        pshow.style.background="hwb(350 34% 15% / 0.6823529411764706)";
+      }
+
+      
+    });
+    
+    
+  </script>
+</body>
+</html>

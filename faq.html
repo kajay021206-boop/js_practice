@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+     }
+     body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(55deg,rgb(211, 152, 211) 50%,rgb(146, 146, 221) 50%);
+     }
+     .faq{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 620px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 12px black;
+        gap: 30px;
+     }
+     .heading{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+     }
+     .heading h1{
+        font-size: 35px;
+     }
+     .heading p{
+        font-weight: bold;
+        font-size: 13px;
+        text-align: center;
+        color: #2c2c2c95;
+     }
+     .faq-list{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+     }
+     .list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        width: 580px;
+        border-radius:6px;
+        border: 2px solid #2c2cc250;
+        
+     }
+     .list-text{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+     }
+     .list-text h1{
+        font-size: 22px;
+     }
+     .list-text p{
+        font-size: 13px;
+     }
+     button{
+        padding: 10px;
+        border-radius: 6px;
+        background: rgb(38, 38, 133);
+        color: #fff;
+        font-size: 20px;
+     }
+    .para{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="faq">
+        <div class="heading">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answer to the most common Questions</p>
+        </div>
+        <div class="faq-list">
+            <div class="list">
+                <div class="list-text">
+                    <h1>What is HTML?</h1>
+                    <p class="para">It is the foundational structure of every webpage. It uses tag-based notation to tell the browser how content should be laid out on the screen</p>
+                </div>
+                <button class="but">+</button>
+            </div>
+              <div class="list">
+                <div class="list-text">
+                    <h1>What is CSS?</h1>
+                    <p class="para">It is the styling presentation layer applied to your structural HTML. It is used to alter visual layouts, color matching, and design uniformity.</p>
+                </div>
+                <button class="but">+</button>
+            </div>
+              <div class="list">
+                <div class="list-text">
+                    <h1>What is JavaScript?</h1>
+                    <p class="para">JavaScript is a complete programming language that adds behavior and dynamic logic to web pages. It executes directly inside the web browser to process data and change parts of the page in real-time without reloading.</p>
+                </div>
+                <button class="but">+</button>
+            </div>
+              <div class="list">
+                <div class="list-text">
+                    <h1>What is DOM events?</h1>
+                    <p class="para">A DOM Event is a signal fired by the browser when something significant happens to those elements (usually driven by user interaction). JavaScript intercepts these signals using Event Listeners to execute specific responses.</p>
+                </div>
+                <button class="but">+</button>
+            </div>
+              <div class="list">
+                <div class="list-text">
+                    <h1>How to learn JavaScript?</h1>
+                    <p class="para">Learn how JavaScript communicates with HTML. Work on grabbing HTML elements, changing text dynamically, modifying CSS styling rules via code, and managing DOM events.</p>
+                </div>
+                <button class="but">+</button>
+            </div>
+        </div>
+    </div>
+    <script>
+  let but =document.querySelectorAll(".but");
+  but.forEach(function(btn){
+      btn.addEventListener("click",function(){
+         let  show=btn.closest(".list");
+         let para=show.querySelector(".para");
+        
+         if(para.style.display==="block"){
+            para.style.display="none";
+            btn.textContent="+";
+         }
+         else{
+            para.style.display="block";
+            btn.textContent="-";
+         }
+      });
+  });
+       
+    </script>
+</body>
+</html>
