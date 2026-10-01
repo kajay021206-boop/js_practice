@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family:sans-serif;
+      }
+      body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+    .table{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        border-radius: 8px;
+        background:rgba(76, 0, 255, 0.253);
+        width: 880px;
+        border: 2px dashed rgb(78, 7, 137);
+        height: 600px;
+        gap: 20px;
+    }
+    .table h1{
+        font-size: 45px;
+        color: blue;
+    }
+    .table p{
+        font-size: 17px;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.495);
+    }
+    .button{
+        display: flex;
+        gap: 30px;
+        padding: 15px;
+        border-radius: 7px;
+        background: rgba(52, 10, 168, 0.551);
+        width: 90%;
+        justify-content: center;
+    }
+    .button input{
+        padding: 12px;
+        border-radius: 5px;
+        border: 2px solid rgba(0, 0, 0, 0.395);
+        font-size: 20px;
+    }
+    .sel{
+        display: flex;
+        padding: 10px 30px;
+        font-size: 25px;
+        border-radius: 7px;
+        border: 2px solid rgba(0, 0, 0, 0.552);
+    }
+    .button button{
+        padding: 10px;
+        border-radius: 7px;
+        font-size: 18px;
+        color: #fff;
+        background: rgb(4, 4, 94);
+        border: none;
+    }
+    .show{
+        width: 93%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px;
+        border-radius: 8px;
+        background: #fff;
+        border: 2px dashed rgba(0, 0, 255, 0.386);
+        height: 500px;
+        gap: 20px;
+        overflow-y: auto;
+    }
+    .numbe{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-radius: 7px;
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+     <div class="table">
+        <h1>Multiplicate table Generator</h1>
+        <p>Type a number and generate the table for that number</p>
+        <div class="button">
+            <input type="number" id="input" placeholder="Enter your number here.....">
+            <select class="sel">
+                <option>5</option>
+                  <option>10</option>
+                    <option>15</option>
+                      <option>20</option>
+                        <option>25</option>
+            </select>
+            <button class="but">Generater Table</button>
+        </div>
+        <div class="show">
+           <div class="numbe">
+             <h3></h3>
+           </div>
+        </div>
+     </div>  
+     <script>
+   
+      let input=document.getElementById("input");
+      let sel=document.querySelector(".sel");
+       let but=document.querySelector(".but");
+       let show=document.querySelector(".show");
+      
+
+       but.addEventListener("click",function(){
+           let inp=Number(input.value);
+           let se=Number(sel.value);
+                   show.innerHTML="";
+           for(let i=1;i<=se;i++){
+              let div=document.createElement("div");
+                 div.className="numbe";
+                  let h3=document.createElement("h3");
+                 h3.textContent=inp+" ⨉ "+i+" = "+i*inp;
+
+                 div.appendChild(h3);
+                 show.appendChild(div);
+
+                 div.style.background=" rgba(77, 0, 243, 0.322)";
+                 div.style.border="2px dashed rgba(208, 0, 255, 0.386)";
+           }
+
+       });
+
+
+
+
+     </script> 
+</body>
+</html>
