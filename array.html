@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avg</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(55deg,rgb(0, 47, 128) 50%,rgb(127, 192, 246) 50%);   
+        }
+        .student{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #fff;
+            width: 820px;
+            height: auto;
+            gap: 5px;
+            border-radius: 7px;
+            box-shadow: 0 0 12px black;
+        }
+        .h1{
+            font-size: 38px;
+            color: rgb(5, 5, 88);
+        }
+        .student p{
+            font-size: 17px;
+            color: rgb(51, 55, 58);
+        }
+        .inputs{
+        padding: 20px;
+        display: flex;
+        background: rgba(0, 0, 255, 0.242);
+        border-radius: 5px;
+        width: 100%;
+        gap: 10px;
+        border: 2px dashed blue;
+        }
+        .inputs input{
+            padding: 10px;
+            width: 300px;
+            border: 2px solid #7b737353;
+            border-radius: 7px;
+            font-size: 18px;
+        }
+        .inputs button{
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background: blue;
+            font-size: 18px;
+            color: #ffd;
+        }
+        .marks{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #d6d3d36b;
+            gap: 10px;
+        }
+       .cle{
+       display: flex;
+       justify-content: space-between;
+       }
+       .cle h3{
+        color: rgb(8, 8, 123);
+       }
+       .cle button{
+        padding: 10px;
+        border: none;
+        background: red;
+        font-size: 18px;
+        color: #fff;
+        border-radius: 8px;
+       }
+       .list{
+        display: flex;
+        gap: 15px;
+       }
+       .li{
+        display: flex;
+       }
+       .li p{
+        background: rgba(0, 0, 255, 0.162);
+        padding: 10px;
+        border-radius: 7px;
+        font-weight: bold;
+       }
+       .results{
+           display: flex;
+           flex-direction: column;
+           width: 100%;
+           padding: 15px;
+           background: rgba(37, 253, 37, 0.349);
+           border-radius: 5px;
+           gap: 10px;
+       }
+       .ana{
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        color: #fff;
+        background: rgb(68, 0, 128);
+       }
+       .results h4{
+        font-size: 18px;
+        color: rgb(8, 8, 113);
+       }
+       .chart{
+        display: grid;
+        grid-template-columns: 1fr 2fr 3fr;
+        gap: 10px;
+        width: 100%;
+       }
+       .total{
+        display: grid;
+        grid-column-start:1;
+        grid-column-end: 2;
+        background: rgba(255, 0, 0, 0.418);
+        padding: 15px;
+        border-radius: 8px;
+        width: 280px;
+        text-align: center;
+        gap: 10px;
+        color: rgb(150, 89, 15);
+       }
+        .avg{
+        display: grid;
+        grid-column-start:2;
+        grid-column-end: 3;
+        background: rgba(0, 51, 255, 0.418);
+        padding: 15px;
+        border-radius: 8px;
+         text-align: center;
+          gap: 10px;
+          color: blue;
+       }
+        .hig{
+        display: grid;
+        grid-column-start:3;
+        grid-column-end: 4;
+        background: rgba(12, 104, 33, 0.418);
+        padding: 15px;
+        border-radius: 8px;
+         text-align: center;
+          gap: 10px;
+          color: green;
+       }
+        .low{
+        display: grid;
+        grid-column-start:1;
+        grid-column-end: 2;
+        background: rgba(176, 227, 8, 0.418);
+        padding: 15px;
+        border-radius: 8px;
+         text-align: center;
+          gap: 10px;
+       }
+        .pass{
+        display: grid;
+        grid-column-start:2;
+        grid-column-end: 5;
+        background: rgba(255, 0, 111, 0.418);
+        padding: 15px;
+        border-radius: 8px;
+         text-align: center;
+          gap: 10px;
+          color: purple;
+       }
+    </style>
+</head>
+<body>
+    <div class="student">
+        <h1 class="h1">Student Marks Analyzer</h1>
+        <p>Enter marks one and analyze the results.</p>
+        <div class="inputs">
+            <input type="number" id="input" placeholder="Enter marks(0-100)">
+            <button class="but">Add Marks</button>
+        </div>
+        <div class="marks">
+            <div class="cle">
+                <h3>Marks:</h3>
+                 <button class="clear">Clear All</button>
+            </div>
+            <div class="list">
+               
+            </div>
+           
+        </div>
+        <button class="ana">Analyze</button>
+        <div class="results">
+            <h4>Results:</h4>
+            <div class="chart">
+                <div class="total">
+                    <h3>Total Marks</h3>
+                    <h1 id="total">0</h1>
+                </div>
+                 <div class="avg">
+                    <h3>Average Marks</h3>
+                    <h1 id="avg">0</h1>
+                </div>
+                 <div class="hig">
+                    <h3>Highest Marks</h3>
+                    <h1 id="hig">0</h1>
+                </div>
+                 <div class="low">
+                    <h3>lowest Marks</h3>
+                    <h1 id="low">0</h1>
+                </div>
+                 <div class="pass">
+                    <h3>Passed students(>=35) Marks</h3>
+                    <h1 id="pass">0</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+  
+    
+    let input=document.getElementById("input");
+     let but=document.querySelector(".but");
+     let clear=document.querySelector(".clear");
+     let list=document.querySelector(".list");
+      let ana=document.querySelector(".ana")
+     let total=document.getElementById("total");
+      let avg=document.getElementById("avg");
+       let hig=document.getElementById("hig");
+        let low=document.getElementById("low");
+         let pass=document.getElementById("pass");
+          let arr=[];
+          //add marks
+        but.addEventListener("click", function(){
+            //contditions
+            if(input.value==="" || input.value < 0 || input.value > 100 ){
+              alert("Please enter valid marks");
+              return;
+            }
+            let val=Number(input.value);
+              arr.push(val);
+            let div=document.createElement("div");
+                 div.className="li";
+             let p=document.createElement("p");
+                 p.textContent=val;
+                 
+                 div.appendChild(p);
+                 list.appendChild(div);
+                   input.value="";
+                 
+        });
+
+        ///analize
+        ana.addEventListener("click",function(){
+            //total and average
+                 let tm=0;
+                  let a="";
+                  for(let i=0;i<arr.length;i++){
+                    tm=tm+arr[i];
+                    a=tm*arr.length/100;
+                  }
+                  //highest
+                 let hi=arr[0];
+            for(let i=1;i<arr.length;i++){
+              if(arr[i]>hi){
+                hi=arr[i];
+              }
+            }
+            //lowest
+          let lo=arr[0];
+            for(let i=1;i<arr.length;i++){
+              if(arr[i]<lo){
+                lo=arr[i];
+              }
+                   }
+          //pass student
+      let cou=0;
+          for(let i=0;i<arr.length;i++){
+            if(arr[i]>=35){
+              cou++;
+            }
+           
+          }
+          total.textContent=tm;
+          avg.textContent=a.toFixed(2);
+          hig.textContent=hi;
+          low.textContent=lo;
+          pass.textContent=cou;
+               });
+
+         //clear      
+    clear.addEventListener("click",function(){
+                 arr=[];
+                    list.textContent="";
+                    total.textContent=0;
+                      avg.textContent=0;
+                        hig.textContent=0;
+                          low.textContent=0;
+                            pass.textContent=0;
+                          
+                 });
+
+    </script>
+</body>
+</html>
