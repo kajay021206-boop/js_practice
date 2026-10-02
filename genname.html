@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generating-Name</title>
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: rgba(0, 0, 255, 0.244);
+    }
+    .user{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        border-radius: 7px;
+        box-shadow: 0 0 12px black;
+        background: #dce7f6f7;
+    }
+    .user-info{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .user-logo{
+        font-size: 38px;
+        color: rgb(87, 0, 128);
+    }
+    .par{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .par h1{
+        font-size: 32px;
+        color: rgb(87, 0, 128);
+    }
+    .par p{
+        font-size: 13px;
+        font-weight: bold;
+        color: rgba(46, 27, 154, 0.708);
+        width: 360px;
+    }
+    .your{
+        padding: 10px;
+        background: #fff;
+        border-radius: 7px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .your h2{
+        font-size: 22px;
+        color: rgb(47, 0, 128);
+    }
+    .inp{
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .fi{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .fi h3{
+        font-size: 18px;
+        color: rgba(9, 9, 104, 0.655);
+    }
+    .fi input{
+        padding: 10px;
+        border: 2px solid rgba(0, 0, 0, 0.456);
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .but{
+        padding: 10px;
+        border-radius: 8px;
+        background: rgb(5, 5, 109);
+        font-size: 18px;
+        color: #fff;
+        border: none;
+    }
+    .but:hover{
+        background: blue;
+    }
+    .gen{
+        display:none;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        background: rgba(9, 224, 9, 0.26);
+        border-radius: 8px;
+    }
+    .gen h2{
+        color: green;
+    }
+    .userlist{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+        background: #3685a79d;
+        border-radius: 5px;
+        height: 200px;
+        overflow-y: auto;
+    }
+    .list{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        align-items: center;
+        border-radius: 8px;
+        background: #fff;
+    }
+    .list button{
+        padding: 10px;
+        border-radius: 8px;
+        background: blue;
+        font-size: 18px;
+        color: #fff;
+        border: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="user">
+        <div class="user-info">
+            <div class="user-logo">
+                <span><i class='bx bxs-user'></i></span>
+            </div>
+            <div class="par">
+                <h1>Username Generator</h1>
+                <p>Enter your first and last name and generate different username formats using Javascript string methods.</p>
+            </div>
+        </div>
+        <div class="your">
+            <h2>Generate Your Username</h2>
+            <div class="inp">
+                <div class="fi">
+                    <h3>First Name</h3>
+                    <input id="first" type="text">
+                </div>
+                <div class="fi">
+                    <h3>Last Name</h3>
+                    <input id="secon" type="text" >
+                </div>
+            </div>
+            <button class="but">
+                Generate Username
+            </button>
+            <div class="gen">
+                <h2>Generated Usernames</h2>
+                <div class="userlist">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+     let first=document.getElementById("first");
+     let secon=document.getElementById("secon");
+     let but=document.querySelector(".but");
+     let userlist=document.querySelector(".userlist") 
+     let gen=document.querySelector(".gen")
+    
+     
+       
+    but.addEventListener("click",function(){
+
+       let fival=first.value.trim();
+     let seval=secon.value.trim();
+
+     
+ 
+      if(fival === "" || seval === ""){
+        alert("Please enter both names");
+        return;
+    }
+    
+    let arr=[fival+seval,fival+"_"+seval,fival+"."+seval,fival.toUpperCase()+seval.toUpperCase(),fival.toUpperCase()+seval.toLowerCase()];
+     userlist.textContent="";
+      
+    for(let i =0;i<arr.length;i++){
+
+      let div=document.createElement("div");
+        div.className="list";
+      let h3=document.createElement("h3");
+         h3.textContent=arr[i];
+       let button=document.createElement("button");
+          button.textContent="copy";
+        
+        
+          
+          div.appendChild(h3);
+          div.appendChild(button);
+          userlist.appendChild(div);
+     
+          gen.style.display="flex";
+        
+          
+      button.addEventListener("click",function(){
+       
+     navigator.clipboard.writeText(h3.textContent);
+     alert("copied");
+
+    });    
+
+          
+    }    
+    });
+
+
+ 
+     (first,secon).addEventListener("keydown",function(event){
+        if(event.key=="Enter"){
+        but.click();
+    }
+     });
+   
+
+    </script>
+</body>
+</html>
