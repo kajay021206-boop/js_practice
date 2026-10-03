@@ -108,9 +108,35 @@
         margin-top: 30px;
         font-size: 17px;
       }
+      .cha{
+        display: flex;
+        justify-content: end;
+        width: 90%;
+        position: absolute;
+        top: 20px;
+        align-items: center;
+      }
+      .dark{
+        padding: 7px;
+        font-size: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #b671fc;
+        border-radius: 10px;
+        background: #210e4e;
+        box-shadow: 0 0 12px black;
+      }
+      body.da{
+        background:#210e4e;
+      }
+
     </style>
 </head>
 <body>
+  <div class="cha">
+    <button class="dark">🌙</button>
+  </div>
     <div class="color">
         <div class="name">
             <span><i class='bx bxs-palette'></i></span>
@@ -167,6 +193,27 @@
           alert("color code copied!");
         });
         
+
+
+
+
+        //dark color button
+
+   let dark=document.querySelector(".dark");
+
+   dark.addEventListener("click",function(){
+      
+    document.body.classList.toggle("da");
+
+    if(document.body.classList.contains("da")){
+      dark.textContent="☀️";
+    }
+    else{
+      dark.textContent="🌙";
+    }
+
+   });
+
     </script>
 </body>
 </html>
