@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(55deg,rgba(0, 0, 255, 0.318) 50%,rgba(0, 0, 0, 0.384) 50%);
+}
+.regis{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #dcd6f8;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 12px black;
+    width: 480px;
+    height:auto;
+}
+.regis h1{
+    font-size: 30px;
+    color: rgb(17, 17, 122);
+}
+.regis p{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: -7px;
+    color: #4e4186b4;
+}
+.form{
+    position: relative;
+    padding: 15px;
+    background: #fff;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+}
+.fi{
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+gap:0px;
+align-items: center;
+}
+.fi input{
+    padding: 10px;
+    width: 100%;
+    border: 2px solid #88ab8c9a;
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.fi input:hover{
+    border-color: blue;
+}
+.star{
+    display: flex;
+    font-size: 15px;
+}
+.star p{
+    color: red;
+}
+.but{
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: rgb(53, 53, 251);
+    transition: 0.5s;
+}
+.para p{
+    font-size: 13px;
+    color: red;
+    display: none;
+}
+.but:hover{
+    background: rgb(19, 19, 148);
+    transform: scale(1.03);
+}
+.lainfo{
+    display: none;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    border: 2px;
+    padding: 13px;
+    border-radius: 7px;
+    background: #f8d6d6;
+    font-size: 15px;
+    color: red;
+}
+.para{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
