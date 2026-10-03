@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(55deg,rgba(255, 166, 0, 0.877) 50%,#2c2c2c7b 50%);
+}
+.color{
+    padding:15px;
+    border-radius: 7px;
+    background: #fff;
+    box-shadow: 0 0 12px black;
+    width: 680px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.color-info{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(55deg,rgb(255, 140, 0) 50%,rgb(82, 5, 137) 90%);
+    border-radius: 7px;
+    width: 100%;
+    gap: 6px;
+    justify-content: center;
+    color: #fff;
+}
+.color-info span{
+    font-size: 50px;
+}
+.side{
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+.left{
+    background: rgb(208, 208, 214);
+    width: 50%;
+    height: 360px;
+    padding: 12px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+.star{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+}
+.star h2{
+    font-size: 30px;
+    color: rgb(10, 10, 118);
+}
+.star select{
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.colorname{
+  display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.colorname h2{
+    font-size: 30px;
+    color: rgb(10, 10, 118); 
+}
+.colorname input{
+     padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #2c2c2c88;
+    font-size: 18px;
+    font-weight: bold;
+}
+.right{
+    background: rgb(215, 215, 220);
+    width: 50%;
+    padding: 10px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.change{
+    padding: 10px;
+    border: none;
+    background: rgb(65, 18, 96);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.change:hover{
+    background: rgb(181, 51, 210);
+}
+.sa{
+    padding: 10px;
+    background: blue;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+}
+.sa:hover{
+    background: rgb(9, 9, 107);
+}
