@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(55deg, rgb(67, 67, 124) 50%,rgb(173, 173, 53) 50%);
+}
+.note{
+    display: flex;
+    flex-direction: column;
+    background: rgb(222, 222, 255);
+    padding: 10px;
+    border-radius: 7px;
+    width: 470px;
+    height: auto;
+}
+.page{
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.logi{
+    display: flex;
+    gap:5px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.logi span{
+    font-size: 48px;
+}
+.logi h1{
+    font-size: 50px;
+}
+textarea{
+    padding: 20px;
+    width: 100%;
+    border: 2px solid rgba(34, 34, 42, 0.544);
+    border-radius: 6px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.save{
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: blue;
+    font-size:20px;
+    font-weight: bold;
+    color: #fff;
+    width: 100%;
+}
+.save:hover{
+    background: rgb(7, 7, 63);
+}
+.show{
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: -10px;
+    padding: 10px;
+    background: rgba(14, 190, 14, 0.442);
+    border-radius: 5px;
+    overflow-y: auto;
+    height: 200px;
+    transition: 0.5s;
+}
+.here{
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 7px;
+    background: rgba(177, 172, 225, 0.563);
+}
+.clear{
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color:red;
+    font-size:20px;
+    font-weight: bold;
+    color: #fff;
+    width: 100%; 
+}
+.clear:hover{
+    background: rgb(122, 18, 18);
+}

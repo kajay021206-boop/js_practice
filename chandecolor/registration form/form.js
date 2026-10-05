@@ -23,19 +23,21 @@ let pa=pass.value;
 let con=conpass.value;
 let ag=Number(age.value);
 
-
+l
 if(na===""||ea===""||pa===""||con===""||ag===""){
     
   regbody.style.background="#f8d6d6";
   lainfo.style.display="flex";
-   reginfo.textContent="× Invalid Input";
-   reginfo.style.color="red";
      fi.forEach(function(input){
        input.style.borderColor="orange";
      });
    regp.style.display="none";
   par.forEach(function(mes){
      mes.style.display="flex";
+     but.style.background="red"
+     but.textContent="Try Again";
+       reginfo.textContent="× Invalid Input";
+       reginfo.style.color="red";
   });
 }
 else{
