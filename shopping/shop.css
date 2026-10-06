@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgba(0, 0, 255, 0.277);
+}
+.shopping{
+display: flex;
+flex-direction: column;
+gap:15px;
+background: #ebe6f6be;
+padding: 10px;
+width: 430px;
+border-radius: 10px;
+height: auto;
+box-shadow: 0 0 12px ;
+}
+.shopping h1{
+    font-size: 50px;
+    text-align: center;
+    background: rgb(14, 14, 158);
+    border-radius: 5px;
+    color: #fff;
+}
+.card{
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card h2{
+    font-size: 20px;
+    color: rgb(24, 24, 152);
+}
+.pro{
+    display: flex;
+    gap: 6px;
+    width: 100%;
+}
+.pro input{
+    width: 100%;
+    border: 2px solid rgba(0, 0, 255, 0.373);
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 18px;
+    background: rgba(118, 118, 144, 0.26);
+}
+.add{
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: green;
+    font-size: 20px;
+    color: #fff;
+}
+.add:hover{
+    background: rgb(21, 196, 21);
+}
+.item{
+display: none;
+flex-direction: column;
+gap: 5px;
+transition: 1.5s;
+}
+.list{
+    background: rgba(7, 255, 7, 0.378);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 120px;
+    overflow-y: auto;
+}
+.num{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background: #ffffffe9;
+    border-radius: 5px;
+    align-items: center;
+    text-align: center;
+}
+.rem{
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    background: red;
+    font-size: 18px;
+    color: #fff;
+}
+.rem:hover{
+    background: rgb(36, 27, 162);
+}
+
+
+.tot{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgba(0, 0, 255, 0.26);
+    border-radius: 5px;
+}
+.clall{
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background:red;
+    font-size: 20px;
+    color: #fff;
+}
+.clall:hover{
+    background: orangered;
+}

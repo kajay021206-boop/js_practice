@@ -23,7 +23,7 @@ let pa=pass.value;
 let con=conpass.value;
 let ag=Number(age.value);
 
-l
+
 if(na===""||ea===""||pa===""||con===""||ag===""){
     
   regbody.style.background="#f8d6d6";
