@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expencies</title>
+    <link rel="stylesheet" href="exp.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+
+
+    <div class="personal">
+        <div class="logo">
+            <div class="img">
+                <span><i class='bx bxs-wallet-alt'></i></span>
+            </div>
+            <div class="logoinfo">
+                <h1>Personal Expense Saver</h1>
+                <p>Track your daily expences and save money!</p>
+            </div>
+        </div>
+        <div class="addexp">
+
+           <h2>Add Expense</h2>
+
+           <div class="inputs">
+
+              <div class="in">
+                <h3>Expense Name:</h3>
+                <input type="text" class="expense" placeholder="eg.Food,Bus,Movie.....">
+              </div>
+
+              <div class="in">
+                <h3>Amount:</h3>
+                <input type="number" class="amount" placeholder="eg150,220,......">
+              </div>
+
+
+           </div>
+           <button class="add">+ Add Expense</button>
+
+
+        </div>
+
+
+        
+      <div class="saved">
+         
+
+        <h2>Saved expense</h2>
+
+
+        <div class="list">
+
+            
+
+
+        </div>
+
+         <div class="total">
+            <h3>Total:</h3>
+            <h2 class="tot">-----</h2>
+         </div>
+
+
+         <button class="rem">⨉ Clear all</button>
+
+      </div>
+
+    </div>
+
+
+
+    <script src="exp.js"></script>
+</body>
+</html>
