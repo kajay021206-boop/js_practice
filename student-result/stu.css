@@ -151,7 +151,124 @@ select{
     width: 95px;
     height: 30px;
 }
-
-
-
-
+.new{
+    display: flex;
+    margin-top: 15px;
+    gap: 20px;
+}
+.boxs.a{
+    padding: 12px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    background: rgba(0, 250, 0, 0.422);
+    border-color: rgba(9, 255, 9, 0.695);
+}
+.boxs.a span{
+    color: greenyellow;
+}
+.boxs span{
+    font-size: 35px;
+}
+.score{
+    color: #fff;
+}
+.boxs{
+     padding: 12px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    background: rgba(54, 0, 250, 0.422);
+    border-color: rgba(103, 9, 255, 0.695)
+}
+.boxs.b{
+    padding: 12px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    background: rgba(250, 21, 0, 0.422);
+    border-color: rgba(255, 54, 9, 0.695);
+}
+.boxs.b span{
+    color: rgb(255, 47, 47);
+}
+.boxs.c{
+    padding: 12px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    background: rgba(5, 144, 114, 0.422);
+    border-color: rgba(9, 185, 255, 0.695);
+}
+.boxs.c span{
+    color: rgb(255, 47, 47);
+}
+.score{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+.find{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 25px;
+    background: rgb(12, 12, 43);
+    padding: 10px;
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    gap: 10px;
+    margin-top: -50px;
+     border: 2px solid #272948;
+}
+.find input{
+   padding: 10px;
+    border-radius: 6px;
+    border: 2px solid #383a4f;
+    background: #272948;
+    outline: none;
+    font-size: 15px;
+    color: #fff;  
+}
+.go{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background:rgb(182, 159, 30);
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+}
+.go:hover{
+background: gold;
+}
+.stuinfo{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background: #383a4f;
+}
+.fiinfo{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: auto;
+    border: 2px solid rgb(12, 12, 43);
+}
+.fiinfo h3{
+    color: #fff;
+    font-size: 15px;
+}
+.fiinfo h2{
+    color:cyan;
+    font-family: cursive;
+    font-size: 17px;
+}
+ 
