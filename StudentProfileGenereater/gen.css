@@ -1,0 +1,195 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: linear-gradient(55deg,rgb(54, 8, 54),rgb(4, 4, 56));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.generate{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(24, 31, 66, 0.852);
+    padding: 12px;
+    border-radius: 7px;
+    border: 2px solid rgba(99, 99, 140, 0.645);
+}
+.logo{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+.logo span{
+    font-size: 50px;
+    color:cyan;
+}
+.logoinfo{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: #fff;
+}
+.logoinfo h2{
+    background: linear-gradient(55deg,#fff,cyan,rgb(255, 95, 220) 80%);
+    -webkit-background-clip: text;
+    color:transparent;
+    text-align: center;
+    font-size: 30px;
+}
+.logoinfo p{
+    font-size: 15px;
+    color: #d6cbcb93;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.int{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.int input,select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgb(6, 6, 43);
+    border: 1px solid rgba(73, 171, 171, 0.66);
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+}
+.int h3{
+    color: #ffffffc2;
+    font-size: 13px;
+}
+.buttons{
+    display: flex;
+    gap: 5px;
+}
+.buttons button{
+    padding: 15px;
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(55deg,rgb(201, 131, 255),rgb(76, 58, 235));
+    transition: 0.5s;
+}
+.buttons p{
+    padding: 12px;
+    border: 2px solid rgba(43, 121, 176, 0.626);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(234, 228, 220);
+    background: rgb(6, 6, 43);
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttons button:hover{
+    background: linear-gradient(12deg,rgb(171, 61, 255),rgb(51, 29, 251));
+}
+.buttons p:hover{
+    box-shadow: 0 0 3px #fff;
+}
+.profile{
+    padding: 12px;
+    border-radius: 7px;
+    background: #fff;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 370px;
+    position: absolute;
+}
+.info{
+    background: rgb(42, 42, 205);
+    padding: 10px;
+    border-radius: 6px;
+    color: #fff;
+}
+.pro{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.pro span{
+    font-size: 50px;
+    padding: 20px;
+    border: 5px solid rgb(47, 123, 255);
+    border-radius: 50%;
+    color: rgb(47, 123, 255);
+    background: rgba(9, 9, 63, 0.852);
+}
+.pro h1{
+    color: green;
+}
+.proinfo{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.jo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ski{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.para{
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgb(192, 228, 255);
+}
+.para h3{
+    font-size: 15px;
+    font-weight: bold;
+    color: blue;
+}
+.para p{
+    font-weight: bold;
+    color: #6e6e72;
+   
+}
+.butts{
+    display: flex;
+    gap: 5px;
+    width: 100%;
+}
+.butts button{
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+}
+.buta{
+    background: rgb(122, 195, 33);
+}
+.butb{
+    background: rgb(121, 31, 163);
+}
+.butc{
+    background: rgb(43, 226, 141);
+}

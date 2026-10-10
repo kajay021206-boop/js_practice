@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student profile</title>
+    <link rel="stylesheet" href="gen.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+
+<div class="generate">
+
+    <div class="logo">
+        <span><i class='bx bxs-user'></i></span>
+        <div class="logoinfo">
+            <h2>Create Student Profile</h2>
+            <p>Enter student details and skills to generate a profile</p>
+        </div>
+    </div>
+    <div class="inputs">
+        <div class="int">
+            <h3>Name</h3>
+            <input type="text"  class="name" placeholder="Enter your name">
+        </div>
+         <div class="int">
+            <h3>Age</h3>
+            <input type="number" class="age" placeholder="Enter your age" >
+        </div>
+         <div class="int">
+            <h3>Course</h3>
+            <select class="skill">
+                <option>HTML</option>
+                 <option>CSS</option>
+                  <option>JavaScript</option>
+                   <option>React</option>
+                    <option>Node.js</option>
+            </select>
+        </div>
+         <div class="int">
+            <h3>Skills</h3>
+            <input type="text" class="course" placeholder="Enter your courses">
+        </div>
+  
+    </div>
+    <div class="buttons">
+        <button class="gen">Generate Profile</button>
+        <p class="repet">↺ Reset</p>
+    </div>
+</div>
+
+<div class="profile">
+    <div class="info">
+        <h1>Student Profile</h1>
+    </div>
+    <div class="pro">
+        <span><i class='bx bxs-user'></i></span>
+        <div class="proinfo">
+            <h1 class="proname"></h1>
+            <div class="jo">
+                <h3>Age</h3>
+                <p class="s">
+                    
+                </p>
+            </div>
+            <div class="jo">
+                <h3>Course</h3>
+                <p class="ss">
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ski">
+        <h3>Skills</h3>
+        <p class="show"></p>
+    </div>
+
+    <div class="para">
+        <h3>Student Summary</h3>
+        <p class="summary"></p>
+    </div>
+
+    <div class="butts">
+        <button class="buta">Copy Profile</button>
+        <button class="butb">Share</button>
+        <button class="butc">New File</button>
+    </div>
+</div>
+
+    <script src="gen.js"></script>
+</body>
+</html>
