@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scop Delection</title>
+    <link rel="stylesheet" href="scop.css">
+</head>
+<body>
+    
+  <div class="container">
+    <header class="header">
+         <h1>🔍 Scope Detective</h1>
+         <p>Explore Javascript Scope & Hoisting</p>
+    </header>
+    <main class="main-container">
+           <aside class="sidebar">
+              <h2>Topics</h2>
+              <button class="scop-but" data-topic="global">Global Scope</button>
+               <button class="scop-but" data-topic="function">Function Scope</button>
+                <button class="scop-but" data-topic="block">Block Scope</button>
+                 <button class="scop-but" data-topic="lexical">Lexical Scope</button>
+                  <button class="scop-but" data-topic="hoisting">Hoisting Scope</button>
+                   <button class="scop-but" data-topic="tdz">TDZ Scope</button>
+           </aside>
+           <section class="code-section">
+            <h2 id="topic-title">Global Scope Example</h2>
+            <p id="topic-description">
+               Variables declared outside a function can be accessed from inside that function
+            </p>
+            <pre class="code-box"><code id="code-display"></pre>
+                <div class="actions">
+                    <button id="run-btn">▶ Run Code</button>
+                    <button id="reset-btn">↻ Reset</button>
+                </div>
+           </section>
+           <section class="output-section">
+            <h2>🖥️ Output</h2>
+            <div class="output-box" id="output">
+                <p>Your output will appear here.....</p>
+            </div>
+           </section>
+    </main>
+    <section class="examples-section">
+         <h2>💡 Explore Scope Examples</h2>
+          <div class="examples-grid">
+             <article class="example-card"> 
+                <h3>🌍 Global Scope</h3>
+                 <p> Variables declared outside functions can be accessed from different scopes. </p> 
+                </article> 
+                <article class="example-card"> 
+                    <h3>🔒 Function Scope</h3>
+                     <p> Variables declared inside a function are accessible within that function. </p> 
+                    </article>
+                     <article class="example-card">
+                         <h3>📦 Block Scope</h3> 
+                         <p> Variables declared with let and const inside a block stay within that block. </p>
+                         </article>
+                          <article class="example-card">
+                             <h3>⬆️ Hoisting</h3>
+                              <p> Understand how JavaScript handles variable and function declarations. </p> 
+                            </article>
+                             <article class="example-card">
+                                 <h3>⏳ TDZ</h3> 
+                                 <p> Learn why let and const cannot be accessed before initialization. </p> 
+                                </article>
+                             </div> 
+                            </section>
+                             <footer class="footer">
+                                 <p>Keep Learning • Keep Coding • Keep Growing 🚀</p> 
+                                </footer>
+  </div>
+
+
+
+
+
+    <script src="scop.js"></script>
+</body>
+</html>

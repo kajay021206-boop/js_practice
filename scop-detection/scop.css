@@ -1,0 +1,400 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #06152e;
+    color: #f1f5ff;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+
+/* ===== 2. Main Container ===== */
+
+.container {
+    width: 95%;
+    max-width: 1450px;
+    margin: auto;
+    padding: 25px 0;
+}
+
+
+/* ===== 3. Header ===== */
+
+.header {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 25px;
+
+    background: linear-gradient(135deg, #0b1f42, #102d5c);
+    border: 1px solid #214d87;
+    border-radius: 18px;
+}
+
+.header h1 {
+    font-size: clamp(28px, 4vw, 45px);
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.header h1::first-letter {
+    color: #38d9ff;
+}
+
+.header p {
+    color: #a8c7ff;
+    font-size: 16px;
+}
+
+
+/* ===== 4. Main Layout ===== */
+
+.main-container {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 18px;
+    align-items: stretch;
+    margin-bottom: 30px;
+}
+
+
+/* ===== 5. Sidebar ===== */
+
+.sidebar {
+    background: #0a2044;
+    border: 1px solid #1b447a;
+    border-radius: 16px;
+    padding: 18px;
+}
+
+.sidebar h2 {
+    color: #64e5ff;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.scop-but {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 13px 12px;
+    margin-bottom: 12px;
+
+    color: #eaf2ff;
+    background: #112d59;
+    border: 1px solid #254a80;
+    border-radius: 10px;
+
+    transition: background 0.3s, transform 0.3s;
+}
+
+.scop-but:hover {
+    background: #17478a;
+    transform: translateX(4px);
+}
+
+.scop-but.active {
+    background: #1765ed;
+    border-color: #4b91ff;
+    color: white;
+}
+
+
+/* ===== 6. Code Section ===== */
+
+.code-section {
+    min-width: 0;
+    padding: 22px;
+
+    background: #0b2042;
+    border: 1px solid #234b82;
+    border-radius: 16px;
+}
+
+.code-section h2 {
+    color: #65e5ff;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+#topic-description {
+    color: #b6c8e6;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+
+/* ===== 7. Code Box ===== */
+
+.code-box {
+    width: 100%;
+    min-height: 280px;
+    padding: 20px;
+    overflow: auto;
+
+    background: #030d1e;
+    border: 1px solid #24518a;
+    border-radius: 12px;
+
+    color: #8eeaff;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 14px;
+    line-height: 1.8;
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.code-box code {
+    font-family: inherit;
+}
+
+
+/* ===== 8. Action Buttons ===== */
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+#run-btn,
+#reset-btn {
+    flex: 1;
+    padding: 13px 16px;
+
+    border: none;
+    border-radius: 9px;
+
+    color: white;
+    font-weight: bold;
+
+    transition: background 0.3s, transform 0.3s;
+}
+
+#run-btn {
+    background: #1765ed;
+}
+
+#run-btn:hover {
+    background: #3884ff;
+    transform: translateY(-2px);
+}
+
+#reset-btn {
+    background: #233b68;
+    border: 1px solid #3c5c92;
+}
+
+#reset-btn:hover {
+    background: #344f83;
+    transform: translateY(-2px);
+}
+
+
+/* ===== 9. Output Section ===== */
+
+.output-section {
+    min-width: 0;
+    padding: 22px;
+
+    background: #0b2042;
+    border: 1px solid #234b82;
+    border-radius: 16px;
+}
+
+.output-section h2 {
+    color: #67f0c1;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.output-box {
+    min-height: 340px;
+    padding: 18px;
+
+    background: #030d1e;
+    border: 1px solid #24518a;
+    border-radius: 12px;
+
+    color: #7fffc8;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 14px;
+
+    overflow-wrap: anywhere;
+    overflow-y: auto;
+}
+
+.output-box p {
+    margin-bottom: 8px;
+}
+
+.output-box .error {
+    color: #ff8d9b;
+}
+
+.output-box .success {
+    color: #7fffc8;
+}
+
+
+/* ===== 10. Example Cards Section ===== */
+
+.examples-section {
+    padding: 25px;
+
+    background: #0a1e3e;
+    border: 1px solid #214779;
+    border-radius: 16px;
+}
+
+.examples-section > h2 {
+    color: #ffdc72;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+}
+
+
+/* ===== 11. Individual Cards ===== */
+
+.example-card {
+    padding: 18px;
+    min-width: 0;
+
+    background: #102b55;
+    border: 1px solid #31598d;
+    border-radius: 12px;
+
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.example-card:hover {
+    transform: translateY(-5px);
+    border-color: #5ce6ff;
+}
+
+.example-card h3 {
+    color: #69e6ff;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.example-card p {
+    color: #c3d2ea;
+    font-size: 14px;
+}
+
+
+/* ===== 12. Footer ===== */
+
+.footer {
+    text-align: center;
+    padding: 25px 10px;
+    margin-top: 22px;
+
+    color: #9cb9e8;
+    border-top: 1px solid #244573;
+}
+
+.footer p {
+    font-size: 15px;
+}
+
+
+/* ===== 13. Tablet Responsive Design ===== */
+
+@media (max-width: 1050px) {
+
+    .main-container {
+        grid-template-columns: 200px minmax(0, 1fr);
+    }
+
+    .output-section {
+        grid-column: 2;
+    }
+
+    .examples-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ===== 14. Mobile Responsive Design ===== */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: 94%;
+        padding: 15px 0;
+    }
+
+    .header {
+        padding: 22px 12px;
+    }
+
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar,
+    .code-section,
+    .output-section {
+        grid-column: auto;
+    }
+
+    .sidebar {
+        padding: 15px;
+    }
+
+    .scop-but {
+        padding: 11px;
+    }
+
+    .code-section,
+    .output-section {
+        padding: 16px;
+    }
+
+    .code-box {
+        min-height: 220px;
+        padding: 14px;
+        font-size: 12px;
+    }
+
+    .output-box {
+        min-height: 200px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .examples-section {
+        padding: 16px;
+    }
+
+    .examples-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .examples-section > h2 {
+        font-size: 21px;
+    }
+}
+
