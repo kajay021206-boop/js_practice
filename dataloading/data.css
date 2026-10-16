@@ -1,0 +1,134 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page Background */
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+/* Main Container */
+.container {
+    width: 100%;
+    max-width: 500px;
+
+    background: #1e293b;
+    padding: 35px 25px;
+
+    border-radius: 18px;
+    border: 1px solid #334155;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading */
+h1 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #38bdf8;
+    line-height: 1.4;
+}
+
+/* Status Message */
+#status {
+    font-size: 16px;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Data Display Box */
+#data-box {
+    min-height: 80px;
+
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 12px;
+
+    padding: 20px;
+    margin-bottom: 25px;
+
+    color: #e2e8f0;
+    font-size: 16px;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+/* Buttons */
+button {
+    padding: 12px 22px;
+    margin: 5px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #0284c7;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Button Hover */
+button:hover:not(:disabled) {
+    background: #0369a1;
+    transform: translateY(-2px);
+}
+
+/* Disabled Button */
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Retry Button */
+#retry-btn {
+    background: #475569;
+}
+
+#retry-btn:hover:not(:disabled) {
+    background: #64748b;
+}
+
+/* Respect the HTML hidden attribute */
+[hidden] {
+    display: none !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 18px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    #status {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        margin: 6px 0;
+    }
+}
