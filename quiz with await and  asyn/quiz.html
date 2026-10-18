@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Quiz Challenge</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+
+<div class="quiz-container">
+
+    <h1>⚡ Async Quiz Challenge</h1>
+
+    <p id="status">Ready to test your JavaScript skills?</p>
+
+    <div class="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <p id="question-count">Question 0 of 3</p>
+
+    <div class="quiz-box">
+
+        <h2 id="question">Click Start Quiz to begin!</h2>
+
+        <div id="options">
+            <button class="option-btn" disabled>Option A</button>
+            <button class="option-btn" disabled>Option B</button>
+            <button class="option-btn" disabled>Option C</button>
+            <button class="option-btn" disabled>Option D</button>
+        </div>
+
+    </div>
+
+    <p id="feedback"></p>
+
+    <div class="score-box">
+        <span>🏆 Your Score</span>
+        <h2 id="score">0 / 3</h2>
+    </div>
+
+    <div class="button-container">
+        <button id="start-btn">Start Quiz</button>
+        <button id="next-btn" hidden>Next Question ➜</button>
+        <button id="restart-btn" hidden>Restart Quiz ↻</button>
+    </div>
+
+</div>
+
+<script src="quiz.js"></script>
+
+
+</body>
+</html>
