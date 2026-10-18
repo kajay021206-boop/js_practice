@@ -1,0 +1,12 @@
+import { sayhello,saygood,saywel } from "./greetings.js";
+let hi=sayhello("Ajay");
+let hii=saygood("Ajay");
+let hiii=saywel("Ajay");
+console.log(hi);
+console.log(hii);
+console.log(hiii);
+import { cal } from "./student.js";
+console.log(cal([80,90,70]));
+console.log(cal([]));
+console.log(cal([100,90]));
+console.log(cal([100,90,80,70]));
