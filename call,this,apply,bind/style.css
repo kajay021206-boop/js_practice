@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+font-family: Arial, sans-serif;
+background: #f1f5f9;
+color: #1e293b;
+padding: 30px 15px;
+}
+
+.container {
+max-width: 900px;
+margin: auto;
+}
+
+header {
+text-align: center;
+margin-bottom: 35px;
+}
+
+header h1 {
+color: #2563eb;
+margin-bottom: 10px;
+}
+
+header p {
+color: #64748b;
+}
+
+.employee-section,
+.action-section,
+.output-section {
+background: white;
+padding: 25px;
+margin-bottom: 25px;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+margin-bottom: 20px;
+color: #334155;
+}
+
+.employee-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+}
+
+.employee-card {
+border: 1px solid #e2e8f0;
+padding: 20px;
+border-radius: 10px;
+background: #f8fafc;
+}
+
+.employee-card h3 {
+margin-bottom: 15px;
+color: #2563eb;
+}
+
+.employee-card p {
+margin-bottom: 10px;
+line-height: 1.5;
+}
+
+button {
+background: #2563eb;
+color: white;
+border: none;
+padding: 11px 16px;
+border-radius: 6px;
+cursor: pointer;
+font-size: 14px;
+margin-top: 10px;
+transition: background 0.2s;
+}
+
+button:hover {
+background: #1d4ed8;
+}
+
+.button-group {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+}
+
+#output {
+min-height: 80px;
+padding: 18px;
+background: #f8fafc;
+border: 1px dashed #cbd5e1;
+border-radius: 8px;
+line-height: 1.8;
+white-space: pre-line;
+overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+.employee-grid {
+grid-template-columns: 1fr;
+}
+
+
+.employee-section,
+.action-section,
+.output-section {
+    padding: 18px;
+}
+
+header h1 {
+    font-size: 25px;
+}
+
+
+}
