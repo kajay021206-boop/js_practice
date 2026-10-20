@@ -52,6 +52,7 @@ vehicleform.addEventListener("submit",(event)=>{
    startbutton.textContent="Start Vehicle";
    const message=document.createElement("p");
    message.classList.add("start-message");
+
    startbutton.addEventListener("click",()=>{
      message.textContent=vehicle.start();
      startbutton.remove();
