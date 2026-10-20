@@ -1,13 +1,49 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vehicle Management System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <script src="script.js"></script>
+
+<main class="container">
+    <h1>🚗 Vehicle Management System</h1>
+    <p class="subtitle">Add a vehicle and bring it to life!</p>
+
+    <form id="vehicleForm">
+        <label for="brand">Vehicle Brand</label>
+        <input
+            type="text"
+            id="brand"
+            placeholder="e.g. Toyota"
+            required
+        >
+
+        <label for="year">Manufacturing Year</label>
+        <input
+            type="number"
+            id="year"
+            placeholder="e.g. 2025"
+            min="1886"
+            required
+        >
+
+        <button type="submit">Add Vehicle</button>
+    </form>
+
+    <section>
+        <h2>Your Vehicles</h2>
+        <div id="vehicleList" class="vehicle-list">
+            <p class="empty-message">No vehicles added yet.</p>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+
+
 </body>
 </html>
