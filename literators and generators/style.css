@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #243b55;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+#numberDisplay {
+    background: #eef4ff;
+    color: #2563eb;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 25px 10px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 85px;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    margin: 7px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#startBtn {
+    background: #2563eb;
+    color: white;
+}
+
+#nextBtn {
+    background: #16a34a;
+    color: white;
+}
+
+#resetBtn {
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+button:disabled {
+    background: #cbd5e1;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+#status {
+    margin-top: 15px;
+    color: #475569;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #numberDisplay {
+        font-size: 28px;
+    }
+}
