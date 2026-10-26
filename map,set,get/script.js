@@ -1,6 +1,7 @@
 const products=new Map();
 const categories=new Set();
 
+
 const productForm=document.getElementById("productForm");
 const productid=document.getElementById("productId");
 const productname=document.getElementById("productName");
@@ -12,6 +13,8 @@ const searchid=document.getElementById("searchId");
 const searchbtn=document.getElementById("searchBtn");
 const searchresult=document.getElementById("searchResult");
 const procount=document.getElementById("productCount");
+const catcount=document.getElementById("catCount");
+const toshow=document.getElementById("toshow");
  
 
 productForm.addEventListener("submit",(event)=>{
@@ -19,9 +22,15 @@ productForm.addEventListener("submit",(event)=>{
 event.preventDefault();
 
 const id=productid.value.trim();
+if(products.has(id)){
+    message.textContent="Product ID already exists!";
+    return;
+ }
 const name=productname.value.trim();
 const price=Number(productprice.value.trim());
 const cat=productcat.value.trim();
+
+
 
 const product={
     name:name,
@@ -30,10 +39,13 @@ const product={
 }
 
 products.set(id,product);
+procount.textContent=products.size;
 
 categories.add(cat);
+catcount.textContent=categories.size;
 message.textContent="product successfully added";
 productForm.reset();
+
 
 const card=document.createElement("div");
 card.classList.add("product-card");
@@ -56,34 +68,44 @@ card.appendChild(pcat);
 card.appendChild(button);
 productlist.appendChild(card);
 
+
+
 button.addEventListener("click",()=>{
 card.remove();
 products.delete(id);
-
-const cateexit=[...products.value()].some(product=>product.cat===cat);
+procount.textContent=products.size;
+const cateexit=[...products.values()].some(product=>product.cat===cat);
 
 if(!cateexit){
     categories.delete(cat);
 }
-procount.textContent=products.size;
+catcount.textContent=categories.size;
 });
+
+
 
 });
 
 
 searchbtn.addEventListener("click",()=>{
   const seaid=searchid.value.trim();
-  const foundproduct=products.get(seaid);
+
  if(products.has(seaid)){
-  searchresult.textContent=`product name:${foundproduct.name},
-   product price:${foundproduct.price},
-   product categorie:${foundproduct.cat}`;
+    toshow.textContent=`Product Found!`;
+    const foundproduct=products.get(seaid);
+  searchresult.textContent=
+  `product ID:${seaid}, ` +
+   `product name:${foundproduct.name}, ` + 
+     `product price:${foundproduct.price}, ` + 
+      `product categorie:${foundproduct.cat}`;
    procount.textContent=products.size;
    searchid.value="";
+   
  }
  else{
     searchresult.textContent="Product not found!";
+        toshow.textContent=``;
  }
-  
+ 
 });
 
